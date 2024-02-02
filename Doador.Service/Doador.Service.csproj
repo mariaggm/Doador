@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Service\" />
+    <ProjectReference Include="..\Doador.Domain\Doador.Domain.csproj" />
+    <ProjectReference Include="..\Doador.Repository\Doador.Repository.csproj" />
   </ItemGroup>
 
 </Project>
