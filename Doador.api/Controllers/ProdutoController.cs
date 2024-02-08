@@ -1,6 +1,5 @@
 ﻿using Doador.Domain.Commands;
 using Doador.Domain.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Doador.api.Controllers
@@ -9,7 +8,6 @@ namespace Doador.api.Controllers
     [ApiController]
     public class ProdutoController : ControllerBase
     {
-        
         private readonly IProdutoService _produtoService;
 
         public ProdutoController(IProdutoService produtoService)
@@ -18,11 +16,9 @@ namespace Doador.api.Controllers
         }
 
         [HttpPost]
-        [Route("CadastrarProduto")]
-        public async Task<IActionResult> PostAsync(ProdutoCommand command)
+        public async Task<IActionResult> CadastrarProduto(ProdutoCommand command)
         {
             return Ok(await _produtoService.PostAsync(command));
         }
     }
 }
-

@@ -14,6 +14,18 @@ builder.Services.AddScoped<IDoadorService, DoadorService>();
 builder.Services.AddScoped<IDoadorRepository, DoadorRepository>();
 builder.Services.AddScoped<IProdutoService, ProdutoService>();
 builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        b =>
+        {
+            b.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+
+});
+
 
 
 var app = builder.Build();
@@ -26,6 +38,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("AllowAllOrigins");
 
 app.UseAuthorization();
 

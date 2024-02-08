@@ -11,8 +11,8 @@ namespace Doador.Repository.Repository
         public async Task<string> PostAsync(ProdutoCommand command)
         {
             string queryInsert = @"
-            INSERT INTO ProdutoId(IdProduto, NomeProduto, Descricao, Categoria, DisponibilidadeAdocao, DoadorId)
-            VALUES(@IdProduto, @NomeProduto, @Descricao, @Categoria, @DisponibilidadeAdocao, @DoadorId)";
+            INSERT INTO ProdutoId(NomeProduto, Descricao, Categoria, DisponibilidadeAdocao, DoadorId)
+            VALUES(@NomeProduto, @Descricao, @Categoria, @DisponibilidadeAdocao, @DoadorId)";
             using (SqlConnection conn = new SqlConnection(conexao))
             {
                 conn.Execute(queryInsert, new

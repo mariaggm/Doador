@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/create.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Criar Produto</h2>
+    
+    <form id="create-form">
+         <label for ="NomeProduto">Nome Produto:</label>
+         <input type = "text" id="NomeProduto" required>
+
+         <label for ="Descricao">Descricao:</label>
+         <input type = "text" id="Descricao" required>
+
+         <label for ="Categoria">Categoria:</label>
+         <input type = "text" id="Categoria" required >
+
+         <label for ="DisponibilidadeAdocao">Disponibilidade Adoção:</label>
+         <input type = "text" id="DisponibilidadeAdocao" required > 
+
+         <label for ="DoadorId">DoadorId:</label>
+         <input type = "text" id="DoadorId" required > 
+
+        
+
+         
+        <button type="button" onclick="createProduto()">Salvar</button> 
+
+
+    </form>
+    <script src="../js/produtocreate.js"></script>
+
+</body>
+</html>

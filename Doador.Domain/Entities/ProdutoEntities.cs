@@ -21,7 +21,7 @@ namespace Doador.Domain.Entities
         public string NomeProduto { get; set; }
         public string Descricao { get; set; }
         public string Categoria { get; set; }
-        public string DisponibilidadeAdocao { get; set; }
+        public bool DisponibilidadeAdocao { get; set; } = false;
         public string DoadorId { get; set; }
     }
 }

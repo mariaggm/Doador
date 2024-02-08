@@ -12,12 +12,12 @@ namespace Doador.Repository.Repository
 {
     public class DoadorRepository : IDoadorRepository
     {
-        string conexao = @"Server=(localdb)\mssqllocaldb;Database=Cadastrodoador ;Trusted_Connection=True;MultipleActiveResultSets=true";
+        string conexao = @"Server=(localdb)\mssqllocaldb;Database=Cadastrodoador;Trusted_Connection=True;MultipleActiveResultSets=true";
         public async Task<string> PostAsync(DoadorCommand command)
         {
             string queryInsert = @"
-            INSERT INTO Doador(DoadorNome, Cidade, Estado, Cep, Email, Telefone, DoadorId)
-            VALUES(@DoadorNome, @Cidade, @Estado, @Cep, @Email, @Telefone, @DoadorId)";
+            INSERT INTO Doador(DoadorNome, Cidade, estado, Cep, Email, Telefone)
+            VALUES(@DoadorNome, @Cidade, @Estado, @Cep, @Email, @Telefone)";
             using (SqlConnection conn = new SqlConnection(conexao)) 
             {
                 conn.Execute(queryInsert, new
